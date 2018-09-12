@@ -26,6 +26,8 @@ MyCode\Core\Router::createRoute("/autor", function() {
     echo "by: Pedro Henrique Masato Enju";
 });
 MyCode\Core\Router::createRoute("/", function() {
+
+    $conn = MyCode\Services\Conexao::getInstance()->getPDO();
     echo "Everbody!!!";
 });
 

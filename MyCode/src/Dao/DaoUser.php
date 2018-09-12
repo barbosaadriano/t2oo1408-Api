@@ -17,7 +17,14 @@ class DaoUser {
 
     public function getAllUsers() {
         
+        $sql = "select * from tbl_caixa";
         
+        $prepare = $this->conn->prepare($sql);
+        $prepare->execute();
+        
+        $array = $prepare->fetchAll();
+        
+        var_dump($array);
         
     }
     

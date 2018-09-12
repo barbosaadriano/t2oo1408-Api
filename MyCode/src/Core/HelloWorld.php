@@ -5,10 +5,10 @@ namespace MyCode\Core;
 class HelloWorld {
 
     public function doSomething() {
-        echo "Yeeee!¡!¡";
+        echo "Feito algo!¡!¡";
     }
     public function doSomethingElse() {
-        echo "Yuuup!¡!¡";
+        echo "Feito outras coisas!¡!¡";
     }
 
 }
