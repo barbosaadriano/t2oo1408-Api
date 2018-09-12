@@ -1,22 +1,17 @@
-<?php
+ <?php
 namespace MyApp\Models;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of User
  *
- * @author thiag
+ * @author drink
  */
 class User {
+    
     private $id;
     private $login;
     private $senha;
     private $situacao;
-    
+
     function getId() {
         return $this->id;
     }
@@ -49,5 +44,5 @@ class User {
         $this->situacao = $situacao;
     }
 
-
+    
 }
