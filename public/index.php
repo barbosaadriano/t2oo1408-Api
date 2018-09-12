@@ -27,7 +27,11 @@ MyCode\Core\Router::createRoute("/autor", function() {
 });
 MyCode\Core\Router::createRoute("/", function() {
 
-    $conn = MyCode\Services\Conexao::getInstance()->getPDO();
+    $conn = MyCode\Services\Singleton::getInstance()->getPDO();
+    
+    $dao = new MyCode\Dao\DaoUser($conn);
+    $dao->getAllUsers();
+    
     echo "Everbody!!!";
 });
 
