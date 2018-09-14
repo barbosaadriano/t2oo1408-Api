@@ -1,17 +1,15 @@
- <?php
+<?php
+
 namespace MyApp\Models;
-/**
- * Description of User
- *
- * @author drink
- */
+
 class User {
     
     private $id;
     private $login;
     private $senha;
     private $situacao;
-
+    
+    
     function getId() {
         return $this->id;
     }
@@ -43,6 +41,7 @@ class User {
     function setSituacao($situacao) {
         $this->situacao = $situacao;
     }
+
 
     
 }

@@ -12,30 +12,39 @@ if (php_sapi_name() === 'cli-server') {
 
 require_once 'MyApp/autoload.php';
 
-  $rota = $_SERVER['REQUEST_URI'];
- 
-  MyApp\Core\Router::createRoute("/do", function(){
-      $f = new MyApp\Core\HelloWorld();
-      $f->doSomething();
-  });
-  
-  MyApp\Core\Router::createRoute("/else", function(){
-      $f = new MyApp\Core\HelloWorld();
-      $f->doSomethingElse();
-  });
-  
-  MyApp\Core\Router::createRoute("/blah", function(){
-      echo "Oi eu sou outra rota!";
-  });
-  
-  MyApp\Core\Router::createRoute("/", function(){
-      
-    $conn = \MyApp\Services\Singleton::getInstance()->getPdo();
-      
-      $dao = new MyApp\Dao\DaoUser($conn);
-      $dao->getAllUsers();
-      echo "Wellcome";
-  });
 
-  
-  MyApp\Core\Router::executeRoute($rota);
+$route = $_SERVER['REQUEST_URI']; // define a url.
+
+MyApp\Core\Router::createRoute("/do", function(){
+    
+    $f = new MyApp\Core\HelloWorld();
+    $f->doSomething();
+    
+});
+
+MyApp\Core\Router::createRoute("/else", function(){
+    
+    $f = new MyApp\Core\HelloWorld();
+    $f->doSomethingElse();
+    
+});
+
+MyApp\Core\Router::createRoute("/blah", function(){
+    
+    echo "Hi, I'm other route";
+    
+});
+
+MyApp\Core\Router::createRoute("/", function(){
+    
+    $conn = MyApp\Services\Conexao::getInstance()->getPdo(); 
+    
+    $dao = new \MyApp\Dao\DaoUser($conn); 
+    $dao->getAllUser(); 
+    echo "Hi, Wellcome";
+    
+});
+
+MyApp\Core\Router::executeRoute($route);
+
+?>

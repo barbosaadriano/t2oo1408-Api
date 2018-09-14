@@ -1,18 +1,23 @@
 <?php
-namespace MyApp\Core;
 
-/**
- * Description of HelloWorld
- *
- * @author drink
- */
+namespace MyApp\Core; 
+
 class HelloWorld {
-    
+   
     public function doSomething(){
-        echo "Fazendo algo...";
+        
+        echo "Doing something..."; 
+        
     }
     
-    public function doSomethingElse(){
-        echo "Fazendo outra coisa";
-    }
+    
+public function doSomethingElse(){
+    
+    echo "Doing other something"; 
+    
 }
+    
+}
+
+
+?>
